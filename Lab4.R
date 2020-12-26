@@ -1,4 +1,4 @@
-# Задано
+# Р—Р°РґР°РЅРѕ
 a = 0
 b = 1.2
 p = 3
@@ -21,26 +21,23 @@ Ub = function(t){
 }
 
 
-# Поиск U
-# Задаем h и tau
+# РџРѕРёСЃРє U (Р·Р°РґР°РµРј q - РІР»РёСЏРµС‚ РЅР° tau (С€Р°Рі РїРѕ t) Рё M - РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ РїРѕ x)
 findU = function(q, M){
+  
+# Р·Р°РґР°РµРј h Рё tau
 h = (b-a)/M
 x = seq(from = a, to = b, length = M)
 
-
 tau = h*h*q/p
-N = trunc(To/tau) #Граница n
-# Зададим xm = mh + a и tn = n*tau
+N = trunc(To/tau) #Р“СЂР°РЅРёС†Р° n
+#Р—Р°РґР°РґРёРј xm = mh + a Рё tn = n*tau
 t = seq(from = 0, to = To, by = tau)
 
-# Находим решение
-
-#Прогонка
-
+#РќР°С…РѕРґРёРј СЂРµС€РµРЅРёРµ
+#РџСЂРѕРіРѕРЅРєР°
 an = -q
 bn = 1 + 2*q
 cn = -q
-
 
 U = matrix(nrow = N, ncol = M) ## M - x, N - t
 for(m in 1: M)
@@ -70,6 +67,8 @@ for(i in 1:(N -1)){
 }
 return(U)
 }
+
+
 
 M1 = 25
 h1 = (b-a)/M1
